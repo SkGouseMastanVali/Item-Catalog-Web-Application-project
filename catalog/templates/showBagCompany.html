@@ -1,0 +1,46 @@
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	        <div class="alert alert-success alert-dismissable animated fadeIn">
+	            {% for message in messages %}
+	            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	            <p class="h4"><strong>{{ message }}</strong></p>
+	            {% endfor %}
+	        </div>
+	{% endif %}	    
+{% endwith %}
+{% if 'username' in session %}
+<button type="button" class="btn btn-warning" style="margin: 5px 0px 5px 25px; border-radius:15px 50px 30px"><a href="{{url_for('addBagDetails',maname=mas.name)}}" style="text-decoration: none;"><strong>Add New Bag</strong></a></button>
+{% endif %}
+<div class="row" style="margin: 10px;">
+{% for mae in maes %}
+
+	<div class="col-sm-4 text-center">
+		<div class="panel panel-primary" style="border:none;background-color:#d7d0d8;">
+			<div class="panel-heading" style="border-radius:15px;font-family:segoe print;background-color:#c65353">
+				<h4>{{ mae.bagname }}</h4>
+			</div>
+			<div class="panel-body text-center" style="border-radius:15px;background-color:#ffeecc" >
+				<table>
+					<tr><th>BAGNAME</th><td>:&nbsp;&nbsp;&nbsp;</td><td><h5>{{ mae.bagname }}</h5></td></tr>
+					<tr><th>COLOR</th><td>:</td><td><h5>{{ mae.color }}</h5></td></tr>
+					<tr><th>BAGTYPE</th><td>:</td><td><h5>{{ mae.bagtype }}</h5></td></tr>
+					<tr><th>RATINGS</th><td>:</td><td><h5>{{ mae.rating }}</h5></td></tr>
+					<tr><th>PRICE</th><td>:</td><td><h5>{{ mae.price }}</h5></td></tr>
+				</table>
+			</div>
+			{% if 'username' in session %}
+			<div class="panel-footer" style="border-radius:15px;background-color:#77773c">
+					<button type="button" class="btn btn-info"style="background-color:green;border-radius:15px 50px 30px"><a href="{{ url_for('editBag',maid=mas.id,maename=mae.bagname) }}"style="text-decoration: none;color:white;font-family:Tempus Sans ITC;font-weight:bold">EDIT</a></button>
+					<button type="button" class="btn btn-danger" style="background-color:red;border-radius:15px 50px 30px"><a href="{{ url_for('deleteBag',maid=mas.id,maename=mae.bagname)}}"style="text-decoration: none;color:white;font-family:Tempus Sans ITC;font-weight:bold">DELETE</a></button>
+			</div>
+			{% endif %}	
+			
+		</div>
+	</div>
+{% endfor %}
+</div>
+{% endblock content %}
+</div>

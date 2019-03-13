@@ -1,0 +1,73 @@
+<title>BagsBazar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <p>welcome to BagsBazar</p>
+
+  <img class="mySlides w3-animate-fading" src="https://www.travelfashiongirl.com/wp-content/uploads/2017/12/suitcase-recommendations-20-travel-experts-reveal-top-luggage-brands-cover-2.jpg" style="width:750px ;height:600px; margin-top:50px; margin-left:0px; border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://n3.sdlcdn.com/imgs/a/i/r/American-Tourister-Black-R50009005-Laptop-SDL064179784-1-c4e32.jpg" style="width:750px; height:600px; margin-top:50px ;margin-left:80px;margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://des.gbtcdn.com/uploads/pdm-desc-pic/Electronic/image/2016/03/18/1458300036314941.jpg" style="width:750px ;height:600px; margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/50/2017/12/Woman-handbag-920x726.jpg" style="width:750px; height:600px ;margin-top:50px; margin-left:80px;margin-left:80px border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://images-na.ssl-images-amazon.com/images/I/91nHWTgQ2TL._SY741_.jpg" style="width:750px; height:600px ;margin-top:50px; margin-left:80px;margin-left:80px border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="http://ziplinetourskauai.com/wp-content/uploads/2018/05/hiking-gear.jpg" style="width:750px ;height:600px ;margin-top:50px; margin-left:80px;margin-left:80px border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://mk0theadventuregfnyq.kinstacdn.com/wp-content/uploads/iStock-497568688.jpg" style="width:750px;height:600px;margin-top:50px;margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://www.everki.com/media/catalog/category/Backpack_view_all.jpg" style="width:750px; height:600px; margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://d1jl03qv6g515h.cloudfront.net/oneaboveall/compressed/content/gallery/wildcraft/dextop-2.jpg/dextop-2.jpg" style="width:750px; height:600px ;margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/leather-duffel-bags-leatherduffels1218.jpeg?itok=GeGaafha" style="width:750px; height:600px; margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://underarmour.scene7.com/is/image/Underarmour/1300216-001_F?scl=1&fmt=jpg&qlt=80&wid=612&hei=650&size=551,585&cache=on,off&bgc=f0f0f0&resMode=sharp2" style="width:750px ;height:600px ;margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://images-na.ssl-images-amazon.com/images/I/81u61g3wdcL._SL1500_.jpg" style="width:750px ;height:600px ;margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://images-na.ssl-images-amazon.com/images/I/71B0esgf26L._SL1500_.jpg" style="width:750px ;height:600px ;margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://assets.ajio.com/medias/sys_master/root/hc5/h04/11235519496222/-1117Wx1400H-460194471-blue-MODEL.jpg" style="width:750px ;height:600px ;margin-top:50px; margin-left:80px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://assets.ajio.com/medias/sys_master/root/hc5/h04/11235519496222/-1117Wx1400H-460194471-blue-MODEL.jpg" style="width:750px ;height:600px ;margin-top:50px; margin-left:80px;border-radius:50px;border-radius:50px">
+  <img class="mySlides w3-animate-fading" src="https://amp.businessinsider.com/images/5be07416d1e844225e3c6d72-750-563.jpg" style="width:750px ;height:600px ;margin-top:50px; margin-left:80px;border-radius:50px">
+</div>
+
+
+
+
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+  <!-- {% for ma in mas_dot %}
+    <a href="{{ url_for('showBagCompany',maid=ma.id)}}">{{ma.name}}</a><br>
+    {% endfor %} -->
+    {% with messages = get_flashed_messages() %}
+	    {% if messages %}
+	        <div class="alert alert-success alert-dismissable animated fadeIn">
+	            {% for message in messages %}
+	            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	            <p class="h4"><strong>{{ message }}</strong></p>
+	            {% endfor %}
+	        </div>
+	    {% endif %}
+	{% endwith %}
+
+	<!--<div class="text-center">
+		<!-- <h1>Welcome to BagsBazar</h1> --
+		<img style="width: 950px; height: 550px; margin: 0;padding: 0; margin-top: 50px" src="https://media.timeout.com/images/100454023/image.jpg">
+	</div>-->
+	
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000);    
+}
+</script>
+
+
+    
+{% endblock content %}
+</div>

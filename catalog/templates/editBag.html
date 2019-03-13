@@ -1,0 +1,38 @@
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+
+<div class="">
+		<div class="mr-sm-2 mb-2 col-sm-8" style="margin: 10px;">
+			<form action="{{ url_for('editBag',maid=maid,maename=bagdetails.bagname)}}" method="POST">
+				<div class="panel panel-info">
+				  <div class="panel-heading">Edit BAG Details</div>
+				  <div class="panel-body">
+				  	
+					  <div class="form-group">
+					  	<label class="text-primary" for="bagname">Enter Bag Name:</label>
+					    <input type="name" class="form-control" name="bagname" value="{{bagdetails.bagname}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="color">Enter color:</label>
+					    <input type="text" class="form-control" name="color" value="{{bagdetails.color}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="rating">Enter Bag ratings:</label>
+					    <input type="text" class="form-control" name="rating" value="{{bagdetails.ratings}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="price">Enter Price:</label>
+					    <input type="text" class="form-control" name="price" value="{{bagdetails.price}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="bagtype">Enter Bag Type:</label>
+					    <input type="text" class="form-control" name="bagtype" value="{{bagdetails.bagtype}}">
+					  </div>					  
+				  </div> 
+				  <div class="panel-footer text-center"><input type="submit" class="btn btn-primary" value="Edit"></div>
+				</div>
+				</form>
+			</div>
+</div>
+{% endblock content %}
